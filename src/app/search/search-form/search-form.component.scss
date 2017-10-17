@@ -6,3 +6,16 @@
   width: 100%;
   margin: -20% 0 0 0px;
 }
+.form-inline span {
+  display:block;
+}
+
+.form-inline span:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.form-inline .col-lg-12 {
+  clear:both;
+}
