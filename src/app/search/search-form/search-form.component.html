@@ -1,0 +1,57 @@
+<!--Card Narrower-->
+<div class="card card-cascade narrower">
+  <!--Card image-->
+  <div class="view overlay hm-white-slight">
+    <img src="../../../assets/images/tripsorter.png" class="img-fluid cropped-image" alt="">
+    <a>
+      <div class="mask"></div>
+    </a>
+  </div>
+  <!--/.Card image-->
+  <!--Card content-->
+  <div class="card-body">
+    <h5 class="pink-text">TripSorter</h5>
+    <!--Title-->
+    <h4 class="card-title">Find your trip</h4>
+    <!--Body-->
+    <div class="form-group">
+      <!--Departures-->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <label>Departures</label>
+            <select class="form-control" [(ngModel)]="selectedDeparture" (change)="filterArrivals()">
+              <option value="" disabled selected>Choose your option</option>
+              <option *ngFor="let city of listOfDepartures" [ngValue]="city">{{city.name}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!--Arrivals-->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <label>Arrivals</label>
+            <select class="form-control" [(ngModel)]="selectedArrival" [disabled]="!departureIsSelected" (change)="selectArrival()">
+              <option *ngFor="let city of listOfArrivals" [ngValue]="city">{{city.name}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!--Filters buttons-->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <button type="submit" [disabled]="!selectedArrival" (click)="filterTrips('cost')" class="btn btn-success find-trip">Cheapest</button>
+          </div>
+          <div class="col-sm-6">
+            <button type="submit" [disabled]="!selectedArrival"  (click)="filterTrips('duration')" class="btn btn-default find-trip">Fastest</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/.Card content-->
+  </div>
+
+
+

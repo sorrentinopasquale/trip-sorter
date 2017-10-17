@@ -1,0 +1,39 @@
+<!--Card Narrower-->
+<div class="card card-cascade narrower">
+  <!--Card content-->
+  <div class="card-body">
+    <h5 class="pink-text">Ordered by <b>{{sortedBy}}</b> from <b>{{trips[0].departure}}</b> to <b>{{trips[0].arrival}}</b></h5>
+    <table  class="table table-striped">
+      <tr>
+        <td>Transport</td>
+        <td>Duration</td>
+        <td>Cost</td>
+        <td></td>
+      </tr>
+      <tr  *ngFor="let trip of trips">
+        <td>{{trip.transport}}</td>
+        <td>{{trip.duration.h}}h and {{trip.duration.m}}m</td>
+        <td>$ {{trip.finalCost}}  <span *ngIf="trip.finalCost !== trip.cost" class="original-cost">({{trip.cost}})</span></td>
+        <td><i class="fa fa-ticket" aria-hidden="true"></i> Buy it</td>
+      </tr>
+    </table>
+  </div>
+  <!--/.Card content-->
+</div>
+<!--/.Card Narrower-->
+<br>
+<!--Reset Button-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <button type="submit" (click)="reset()" class="btn btn-default back-button">Reset</button>
+    </div>
+  </div>
+</div>
+<!--/.Reset button-->
+
+
+
+
+
+

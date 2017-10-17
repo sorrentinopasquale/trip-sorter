@@ -1,0 +1,18 @@
+.back-button {
+  width: 100%;
+  float: none;
+  margin: 0 auto;
+}
+.cropped-image {
+  width: 100%;
+  margin: -20% 0 0 0px;
+}
+tr:nth-child(2) td
+{
+  background-color: white;
+  color:green;
+  font-weight: bold;
+}
+.original-cost {
+  text-decoration: line-through;
+}

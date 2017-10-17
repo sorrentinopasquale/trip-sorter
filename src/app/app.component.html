@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div class="container">
+<div class="row">
+  <div *ngIf="showSearch" class="col-sm-12">
+    <div *ngIf="serviceMessage"><h3>{{serviceMessage}}</h3></div>
+    <app-search-form (tripsUpdated)="handleTripsUpdated($event)" *ngIf="response && response.length > 0" [allTrips]="response"></app-search-form>
+  </div>
+  <div *ngIf="!showSearch " class="col-sm-12">
+    <app-results-table (resetSearch)="newSearch()" [sortedBy]="criteria" [trips]="availableTrips"></app-results-table>  </div>
+</div>
+</div>
+
+
+
+
+
+
