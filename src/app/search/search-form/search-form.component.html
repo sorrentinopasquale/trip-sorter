@@ -21,7 +21,7 @@
           <div class="col-sm-12">
             <label>Departures</label>
             <select class="form-control" [(ngModel)]="selectedDeparture" (change)="filterArrivals()">
-              <option value="" disabled selected>Choose your option</option>
+              <option value="" disabled selected>Select your departure</option>
               <option *ngFor="let city of listOfDepartures" [ngValue]="city">{{city.name}}</option>
             </select>
           </div>
@@ -33,6 +33,7 @@
           <div class="col-sm-12">
             <label>Arrivals</label>
             <select class="form-control" [(ngModel)]="selectedArrival" [disabled]="!departureIsSelected" (change)="selectArrival()">
+              <option value="" disabled selected>Select your arrival</option>
               <option *ngFor="let city of listOfArrivals" [ngValue]="city">{{city.name}}</option>
             </select>
           </div>
